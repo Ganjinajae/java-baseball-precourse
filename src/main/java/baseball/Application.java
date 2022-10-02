@@ -12,6 +12,20 @@ public class Application {
         new Application().makeNumbers();
         final String input = InputView.show();
         System.out.println(input);
+        validateInputLength(input);
+        validateInputType(input);
+    }
+
+    private static void validateInputLength(String input) {
+        if (input.length() != 3) {
+            throw new IllegalArgumentException("입력 값의 길이가 적절하지 않습니다.");
+        }
+    }
+
+    private static void validateInputType(String input) {
+        if (!input.matches("\\d+")) {
+            throw new IllegalArgumentException("입력은 숫자만 가능합니다.");
+        }
     }
 
     private void makeNumbers() {
