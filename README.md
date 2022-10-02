@@ -39,6 +39,9 @@
     * 구현 완료 시 src/test/java 폴더의 baseball.ApplicationTest에 있는 2개의 Test Case가 성공해야함
         * (Optional)제공하는 소스 코드 참고해 야구게임을 위한 모든 Test Case 추가해보기
     * [자바 코드 컨벤션](#컨벤션) 지키기
+    * indent(들여쓰기) depth가 2를 넘지 않도록 한다. 1까지만 허용
+      * while문 안에 if문 있으면 depth 2
+      * (힌트) depth를 줄이는 좋은 방법은 함수(또는 메서드)를 분리
     * stream api 사용하지 않고 구현. 람다는 사용 가능
     * else 예약어 쓰지 않기(당연히 switch/case도)
     * 함수(또는 메서드)의 길이가 10라인 넘어가지 않도록. 한 가지 일만 잘 수행하도록.
