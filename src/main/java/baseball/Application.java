@@ -10,6 +10,8 @@ public class Application {
 
     public static void main(String[] args) {
         new Application().makeNumbers();
+        final String input = InputView.show();
+        System.out.println(input);
     }
 
     private void makeNumbers() {
