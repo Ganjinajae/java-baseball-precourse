@@ -4,11 +4,14 @@ public class Application {
 
     public static void main(String[] args) {
         Balls balls = new Balls();
-        final String input = InputView.show();
-        validateInputLength(input);
-        validateInputType(input);
-        PlayResult result = balls.compare(input);
-        OutputView.show(result);
+        boolean end = false;
+        while (!end) {
+            final String input = InputView.show();
+            validateInputLength(input);
+            validateInputType(input);
+            PlayResult result = balls.compare(input);
+            end = OutputView.show(result, balls);
+        }
     }
 
     private static void validateInputLength(String input) {

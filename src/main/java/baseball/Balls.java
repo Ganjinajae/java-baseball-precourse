@@ -8,13 +8,10 @@ import java.util.List;
 
 public class Balls {
     private List<Ball> ballList;
-    private List<Integer> numberList = new ArrayList<>();
+    private List<Integer> numberList;
 
     public Balls() {
         this.makeNumbers();
-        this.ballList = mapper(numberList);
-        printNumbers();
-        System.out.println(this);
     }
 
     public Balls(List<Integer> inputList) {
@@ -32,11 +29,14 @@ public class Balls {
     /**
      * 판단 기준으로 쓸 볼 리스트를 랜덤으로 만들어낸다.
      */
-    private void makeNumbers() {
+    public void makeNumbers() {
+        numberList = new ArrayList<>();
         while (numberList.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
             addNumber(randomNumber);
         }
+        this.ballList = mapper(numberList);
+        printNumbers();
     }
 
     /**
