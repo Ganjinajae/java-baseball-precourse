@@ -88,4 +88,8 @@ public class Balls {
                         + this.ballList.get(2)
                         + ")");
     }
+
+    public List<Ball> getBallList() {
+        return ballList;
+    }
 }
