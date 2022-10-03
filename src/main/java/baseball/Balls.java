@@ -50,7 +50,7 @@ public class Balls {
         }
     }
 
-    public String compare(String input) {
+    public PlayResult compare(String input) {
         int value = Integer.parseInt(input);
         int first = value / 100;
         int second = (value % 100) / 10;
@@ -58,20 +58,14 @@ public class Balls {
         return compare(Arrays.asList(first, second, third));
     }
 
-    private String compare(List<Integer> inputList) {
+    private PlayResult compare(List<Integer> inputList) {
+        PlayResult result = new PlayResult();
         Balls inputBalls = new Balls(inputList);
-        int s = 0; // 임시
-        int b = 0; // 임시
         for (Ball ball : ballList) {
             BallStatus ballStatus = inputBalls.compare(ball);
-            if (ballStatus == BallStatus.STRIKE) {
-                s++;
-            }
-            if (ballStatus == BallStatus.BALL) {
-                b++;
-            }
+            result.score(ballStatus);
         }
-        return new StringBuilder().append("스트라이크").append(s).append("볼").append(b).toString();
+        return result;
     }
 
     private BallStatus compare(Ball inputBall) {

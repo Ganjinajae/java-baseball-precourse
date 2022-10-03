@@ -7,8 +7,8 @@ public class Application {
         final String input = InputView.show();
         validateInputLength(input);
         validateInputType(input);
-        String output = balls.compare(input);
-        System.out.println(output);
+        PlayResult result = balls.compare(input);
+        OutputView.show(result);
     }
 
     private static void validateInputLength(String input) {
