@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Balls {
-    public List<Ball> ballList;
+    private List<Ball> ballList;
     private List<Integer> numberList = new ArrayList<>();
 
     public Balls() {
